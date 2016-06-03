@@ -18,6 +18,5 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    # url(r'^', include('blog.urls')),  # If Blog is the main page
-    url(r'^blog/', include('blog.urls')),  # To use Blog as an app, which is this case
+    url(r'^blog/', include('blog.urls')),
 ]
