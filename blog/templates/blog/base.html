@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AFC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
+</head>
+<body class="w3-container">
+
+    <!-- Menú de navegación -->
+    <ul class="w3-navbar w3-dark-grey">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/blog">Mi Blog</a></li>
+    </ul>
+
+    <!-- Encabezado -->
+    <header class="w3-container w3-blue-grey">
+        <h1>Sitio de prueba</h1>
+    </header>
+
+    <!-- Contenido variable de cada página -->
+    <div class="w3-container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Pié de página -->
+    <footer class="w3-container w3-blue-grey">
+        <p>Este es el pié de página del sitio</p>
+    </footer>
+
+</body>
+</html>

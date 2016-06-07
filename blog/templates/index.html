@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>AFC - Inicio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 </head>
 
-<header class="w3-container w3-blue-grey">
-    <h1>¡Bienvenido a mi sitio!</h1>
-</header>
-
 <body>
-    <div class="w3-container">
-        <p>Este es el cuerpo de la página principal</p>
-    </div>
-</body>
 
-<footer class="w3-container w3-blue-grey">
-    <p>Este es el pié de página del sitio</p>
-</footer>
+{% extends 'blog/base.html' %}
+{% block content %}
+
+    <div class="w3-border-bottom w3-border-blue-grey">
+    <h2>¡Bienvenido a mi sitio de prueba!</h2>
+    </div>
+
+    <div style="w3-container">
+        <p>Este es el contenido de la página principal</p>
+    </div>
+
+{% endblock content %}
+
+</body>
 
 </html>

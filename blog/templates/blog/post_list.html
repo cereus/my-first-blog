@@ -4,13 +4,22 @@
     <meta charset="UTF-8">
     <title>AFC - Mensajes</title>
 </head>
+
 <body>
-    <h1>¡Bienvenido!</h1>
-    <h2>Este es mi Blog</h2>
-        {% for post in posts %}
-            <h3><a href="">{{ post.title }}</a></h3>
-            <p>Publicada el {{ post.published_date }}</p>
-            <p>{{ post.text|linebreaks }}</p>
-        {% endfor %}
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="w3-border-bottom w3-border-blue-grey">
+    <h2>Este es mi Blog de Prueba</h2>
+    </div>
+
+    {% for post in posts %}
+        <h3 class="w3-round-small w3-khaki w3-padding"><a href="">{{ post.title }}</a></h3>
+        <p class="w3-small">Publicada el <strong>{{ post.published_date }}</strong></p>
+        <p>{{ post.text|linebreaks }}</p>
+    {% endfor %}
+
+{% endblock content %}
+
 </body>
 </html>
