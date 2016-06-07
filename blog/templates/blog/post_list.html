@@ -7,5 +7,10 @@
 <body>
     <h1>¡Bienvenido!</h1>
     <h2>Este es mi Blog</h2>
+        {% for post in posts %}
+            <h3><a href="">{{ post.title }}</a></h3>
+            <p>Publicada el {{ post.published_date }}</p>
+            <p>{{ post.text|linebreaks }}</p>
+        {% endfor %}
 </body>
 </html>
