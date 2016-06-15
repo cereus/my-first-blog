@@ -1,18 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>AFC</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 
+    <style>
+        .w3-form, label, input, textarea {
+        width: 100%;
+        color: grey;
+        }
+    </style>
+
 </head>
 <body class="w3-container">
 
     <!-- Menú de navegación -->
-    <ul class="w3-navbar w3-dark-grey">
+    <ul class="w3-navbar w3-purple">
         <li><a href="/">Inicio</a></li>
-        <li><a href="/blog">Mi Blog</a></li>
+        <li class="w3-dropdown-hover">
+            <a href="#">Mi Blog</a>
+            <div class="w3-dropdown-content w3-white w3-card-4">
+                <a href="/blog">Ver</a>
+                <a href="{% url 'blog.views.post_new' %}">Publicar</a>
+            </div>
+        </li>
     </ul>
 
     <!-- Encabezado -->
@@ -27,9 +40,25 @@
     </div>
 
     <!-- Pié de página -->
-    <footer class="w3-container w3-blue-grey">
-        <p>Este es el pié de página del sitio</p>
+    <br>
+    <footer class="w3-container w3-grey">
+        <div class="w3-third w3-container">
+            <h4 class="w3-text-purple">Pié de página 1</h4>
+            <p class="w3-text-dark-grey">Texto de la sección</p>
+        </div>
+        <div class="w3-third w3-container">
+            <h4 class="w3-text-purple">Pié de página 2</h4>
+            <p class="w3-text-dark-grey">Texto de la sección</p>
+        </div>
+        <div class="w3-third w3-container">
+            <h4 class="w3-text-purple">Pié de página</h4>
+            <p class="w3-text-dark-grey">Texto de la sección</p>
+        </div>
     </footer>
+
+    <!-- Derechos reservados -->
+    <br>
+    <div class="w3-container w3-tiny">Derechos Reservados 2016 ® Angel Flores Chávez</div>
 
 </body>
 </html>

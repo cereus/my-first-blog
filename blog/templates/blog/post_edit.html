@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar piblicaión</title>
+</head>
+
+<body>
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<h2>Nueva publicación</h2>
+
+<form method="POST" class="w3-card-4 w3-padding-medium">{% csrf_token %}
+    {{ form.as_p }}
+    <div class="w3-container"><button type="submit" class="w3-btn w3-khaki">Guardar</button></div><br>
+</form>
+{% endblock %}
+
+</body>
+</html>
