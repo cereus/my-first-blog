@@ -14,7 +14,9 @@
     </div>
 
     {% for post in posts %}
-        <h3 class="w3-round-small w3-khaki w3-padding"><a href="">{{ post.title }}</a></h3>
+        <h3 class="w3-round-small w3-khaki w3-padding">
+            <a href="{% url 'blog.views.post_detail' pk=post.pk %}">{{ post.title }}</a>
+        </h3>
         <p class="w3-small">Publicada el <strong>{{ post.published_date }}</strong></p>
         <p>{{ post.text|linebreaks }}</p>
     {% endfor %}
