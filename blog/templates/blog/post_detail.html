@@ -8,16 +8,17 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <div class="post">
-        {% if post.published_date %}
-        <div class="date">
+    <div>
+        <h2>{{ post.title }}</h2>
+         {% if post.published_date %}
+        <div class="w3-small">
             {{ post.published_date }}
         </div>
         {% endif %}
-        <h1>{{ post.title }}</h1>
         <p>{{ post.text|linebreaks }}</p>
 
-        <p><a class="w3-btn w3-khaki" href="/blog">Cerrar</a></p>
+        <div class="w3-btn w3-khaki"><a href="{% url 'post_edit' pk=post.pk %}">Editar</a></div>
+        <div class="w3-btn w3-khaki"><a href="/blog">Cerrar</a></div>
 
     </div>
 {% endblock %}
