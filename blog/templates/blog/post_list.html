@@ -9,9 +9,10 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+
     <div class="w3-border-bottom w3-border-blue-grey">
     <h2>Este es mi Blog de Prueba</h2>
-        <div class="w3-btn w3-khaki"><a href="{% url 'blog.views.post_new' %}">Publicar...</a></div>
+        <div class="w3-btn w3-khaki"><a href="{% url 'blog.views.post_new' %}">Nueva Publicación...</a></div>
         <br><br>
     </div>
 
@@ -19,8 +20,8 @@
         <h4 class="w3-round-large w3-khaki w3-padding">
             <a class="w3-btn w3-khaki" href="{% url 'blog.views.post_detail' pk=post.pk %}">{{ post.title }}</a>
         </h4>
-        <p class="w3-small">Publicado el <strong>{{ post.published_date }}</strong></p>
-        <p>{{ post.text|linebreaks }}</p>
+        <p class="w3-small">Publicado el <strong>{{ post.published_date }} hrs.</strong></p>
+        <p>{{ post.text|truncatechars:200|linebreaks }}</p>
     {% endfor %}
 
 {% endblock content %}

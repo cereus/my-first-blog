@@ -27,8 +27,9 @@
         <li class="w3-dropdown-hover">
             <a href="#">Mi Blog</a>
             <div class="w3-dropdown-content w3-white w3-card-4">
-                <a href="/blog">Ver</a>
-                <a href="{% url 'blog.views.post_new' %}">Publicar</a>
+                <a href="/blog">Publicaciones</a>
+                <a href="{% url 'post_draft_list' %}">Borradores</a>
+                <a href="{% url 'blog.views.post_new' %}">Nueva Publicación</a>
             </div>
         </li>
     </ul>

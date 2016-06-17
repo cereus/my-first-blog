@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Borrador</title>
+</head>
+<body>
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+    <div class="w3-border-bottom w3-border-blue-grey">
+    <h2>Borradores sin publicar</h2>
+    </div>
+
+    {% for post in posts %}
+        <h4 class="w3-round-large w3-grey w3-padding">
+            <a class="w3-btn w3-grey" href="{% url 'blog.views.post_detail' pk=post.pk %}">{{ post.title }}</a>
+        </h4>
+            <!-- <p class="w3-small">Creado el <strong>{{ post.created_date|date:'d-m-Y' }}</strong></p> -->
+            <p class="w3-small">Creado el <strong>{{ post.created_date }} hrs.</strong></p>
+            <p>{{ post.text|truncatechars:200|linebreaks }}</p>
+        </div>
+    {% endfor %}
+
+{% endblock %}
+
+</body>
+</html>
