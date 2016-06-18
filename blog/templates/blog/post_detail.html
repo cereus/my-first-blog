@@ -29,7 +29,7 @@
             <a class="w3-btn w3-purple" href="{% url 'blog.views.post_publish' pk=post.pk %}">Publicar</a>
         {% endif %}
         <div class="w3-btn w3-purple"><a href="{% url 'post_remove' pk=post.pk %}">Borrar</a></div>
-        <div class="w3-btn w3-purple"><a href="/blog">Cerrar</a></div>
+        <div class="w3-btn w3-purple"><a href="{% url 'blog.views.post_list' %}">Cerrar</a></div>
 
     </div>
 {% endblock %}
