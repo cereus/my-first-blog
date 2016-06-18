@@ -11,12 +11,39 @@
 {% block content %}
 
     <div class="w3-border-bottom w3-border-blue-grey">
-    <h2>¡Bienvenido a mi sitio de prueba!</h2>
+    <h2>Inicio</h2>
+    </div>
+    <br>
+    <div class="w3-container w3-border w3-padding-small">
+        <h3>Menú de aplicaciones del sitio</h3>
     </div>
 
-    <div style="w3-container">
-        <p>Este será el contenidos de la página principal</p>
-    </div>
+    <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable">
+        <thead>
+        <tr class="w3-light-grey">
+          <th>Aplicación</th>
+          <th>Descripción</th>
+          <th>¿Ok?</th>
+        </tr>
+        </thead>
+        <tr>
+          <td><a href="{% url 'blog.views.post_list' %}">Blog</td>
+          <td><a href="{% url 'blog.views.post_list' %}">Ejemplo de blog de entradas con funciones de listado,
+              creación, edición y borrado de entradas</td>
+          <td><a href="{% url 'blog.views.post_list' %}"><center><i class="material-icons">check</i></center></td>
+        </tr>
+        <tr>
+          <td>Aplicación 2</td>
+          <td>Descripción...</td>
+          <td><center><i class="material-icons">clear</i></center></td>
+        </tr>
+        <tr>
+          <td>Aplicación 3</td>
+          <td>Descripción...</td>
+          <td><center><i class="material-icons">clear</i></center></td>
+        </tr>
+    </table>
+
 
 {% endblock content %}
 

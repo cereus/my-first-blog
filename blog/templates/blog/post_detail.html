@@ -8,17 +8,28 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+
+    <div class="w3-border-bottom w3-border-blue-grey">
+    <h2>Detalles de la publicación</h2>
+    </div>
+
     <div>
         <h2>{{ post.title }}</h2>
-         {% if post.published_date %}
-        <div class="w3-small">
-            {{ post.published_date }}
-        </div>
+        {% if post.published_date %}
+            <div class="w3-small">
+                {{ post.published_date }}
+            </div>
         {% endif %}
+
         <p>{{ post.text|linebreaks }}</p>
 
-        <div class="w3-btn w3-khaki"><a href="{% url 'post_edit' pk=post.pk %}">Editar</a></div>
-        <div class="w3-btn w3-khaki"><a href="/blog">Cerrar</a></div>
+        <div class="w3-btn w3-purple"><a href="{% url 'post_edit' pk=post.pk %}">Editar</a></div>
+        {% if post.published_date %}
+        {% else %}
+            <a class="w3-btn w3-purple" href="{% url 'blog.views.post_publish' pk=post.pk %}">Publicar</a>
+        {% endif %}
+        <div class="w3-btn w3-purple"><a href="{% url 'post_remove' pk=post.pk %}">Borrar</a></div>
+        <div class="w3-btn w3-purple"><a href="/blog">Cerrar</a></div>
 
     </div>
 {% endblock %}

@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>AFC - Mensajes</title>
+    <title>AFC - Publicaciones</title>
 </head>
 
 <body>
@@ -11,8 +11,9 @@
 {% block content %}
 
     <div class="w3-border-bottom w3-border-blue-grey">
-    <h2>Este es mi Blog de Prueba</h2>
-        <div class="w3-btn w3-khaki"><a href="{% url 'blog.views.post_new' %}">Nueva Publicación...</a></div>
+    <h2>Lista de publicaciones</h2>
+        <div class="w3-btn w3-purple"><a href="{% url 'blog.views.post_new' %}">Nueva Publicación</a></div>
+        <div class="w3-btn w3-purple"><a href="{% url 'blog.views.post_draft_list' %}">Borradores</a></div>
         <br><br>
     </div>
 
