@@ -23,5 +23,6 @@ urlpatterns = [
     url(r'^$', 'mysite.views.site_index'),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/login/$', django.contrib.auth.views.login, name='login'),
+    url(r'^accounts/logout/$', django.contrib.auth.views.logout, name='logout', kwargs={'next_page': '/'}),
     url(r'^blog/', include('blog.urls')),
 ]

@@ -37,7 +37,17 @@
 
     <!-- Encabezado -->
     <header class="w3-container w3-blue-grey">
-        <h1>Aplicaciones WEB</h1>
+        <div class="w3-threequarter">
+            <h1>Aplicaciones WEB</h1>
+        </div>
+        <div class="w3-quarter w3-right">
+            {% if user.is_authenticated %}
+            <p class="w3-text-light-grey w3-small"><strong>Hola {{ user.first_name }}</strong>
+                (<a href="{% url 'logout' %}">Desconectar</a>)</p>
+            {% else %}
+            <p class="w3-btn w3-purple w3-small"><a href="{% url 'login' %}">Acceso</a></p>
+            {% endif %}
+        </div>
     </header>
 
     <!-- Contenido variable de cada página -->

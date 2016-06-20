@@ -11,14 +11,16 @@
 {% block content %}
 
     <div class="w3-border-bottom w3-border-blue-grey">
-    <h2>Lista de publicaciones</h2>
-        {% if user.is_authenticated %}
-        <div class="w3-btn w3-purple"><a href="{% url 'blog.views.post_new' %}">Nueva Publicación</a></div>
-        <div class="w3-btn w3-purple"><a href="{% url 'blog.views.post_draft_list' %}">Borradores</a></div>
-        {% else %}
-        <div class="w3-btn w3-purple"><a href="{% url 'login' %}">Accede al sitio para publicar</a></div>
-        {% endif %}
-        <br><br>
+
+        <h2>Lista de publicaciones</h2>
+            {% if user.is_authenticated %}
+            <div  class="w3-margin-bottom">
+                <div class="w3-btn w3-purple"><a href="{% url 'blog.views.post_new' %}">Nueva Publicación</a></div>
+                <div class="w3-btn w3-purple"><a href="{% url 'blog.views.post_draft_list' %}">Borradores</a></div>
+            </div>
+            {% else %}
+            <p>* Debes acceder al sitio para publicar y modificar</p>
+            {% endif %}
     </div>
 
     {% for post in posts %}
