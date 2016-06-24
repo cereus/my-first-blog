@@ -7,8 +7,10 @@
 
 <body>
 {% extends 'blog/base.html' %}
+{% load staticfiles %}
 
 {% block content %}
+    <img  src="{% static 'img/banner.png' %}" style="width: 100%;"  alt="Banner">
 
     <div class="w3-border-bottom w3-border-blue-grey">
     <h2>Inicio</h2>

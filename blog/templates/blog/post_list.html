@@ -5,7 +5,7 @@
     <title>AFC - Publicaciones</title>
 </head>
 
-<body>
+<p>
 {% extends 'blog/base.html' %}
 
 {% block content %}
@@ -27,8 +27,20 @@
         <h4 class="w3-round-large w3-khaki w3-padding">
             <a class="w3-btn w3-khaki" href="{% url 'blog.views.post_detail' pk=post.pk %}">{{ post.title }}</a>
         </h4>
-        <p class="w3-small">Publicado el <strong>{{ post.published_date }} hrs.</strong></p>
+        <div class="w3-twothird">
+            <p class="w3-small">Publicado el <strong>{{ post.published_date }} hrs.</strong></p>
+        </div>
+        <div class="w3-third">
+            <p class="w3-small">Autor: <strong>{{ post.author.first_name }} {{ post.author.last_name }}</strong></p>
+        </div>
         <p>{{ post.text|truncatechars:200|linebreaks }}</p>
+        <p>
+            <a class="w3-hover-purple w3-padding-small w3-text-brown"
+               href="{% url 'blog.views.post_detail' pk=post.pk %}">
+                Comentarios: {{ post.approved_comments.count }}
+            </a>
+        </p>
+
     {% endfor %}
 
 {% endblock content %}

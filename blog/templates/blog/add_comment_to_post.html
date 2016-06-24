@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuevo Comentario</title>
+</head>
+<body>
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h2>Nuevo comentario</h2>
+    <form method="POST" class="w3-card-4 w3-padding-medium">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="w3-btn w3-purple">Enviar</button>
+        <div class="w3-btn w3-purple"><a href="{% url 'blog.views.post_list' %}">Cerrar</a></div>
+    </form>
+{% endblock %}
+
+</body>
+</html>
