@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <style>
         .w3-form, label, input, textarea {
@@ -58,18 +59,42 @@
 
     <!-- Pié de página -->
     <br>
-    <footer class="w3-container w3-grey">
-        <div class="w3-third w3-container">
-            <h4 class="w3-text-white">Pié de página 1</h4>
-            <p class="w3-text-dark-grey">Texto de la sección</p>
+    <footer class="w3-container w3-grey w3-padding-xlarge">
+        <!-- Primera sección -->
+        <div class="w3-container w3-third">
+            <h4 class="w3-text-white">Aplicaciones</h4>
+            <div class="w3-container w3-text-dark-grey">
+                <div><a href="{% url 'mysite.views.site_index' %}">Inicio</a></div>
+                <div><a href="{% url 'blog.views.post_list' %}">Blog</a></div>
+            </div>
         </div>
+        <!-- Segunda sección -->
         <div class="w3-third w3-container">
-            <h4 class="w3-text-white">Pié de página 2</h4>
-            <p class="w3-text-dark-grey">Texto de la sección</p>
+            <h4 class="w3-text-white">Más información</h4>
+            <div class="w3-container w3-text-dark-grey">
+                <div><a href="#">Acerca de este sitio</a></div>
+                <div><a href="#">Aviso de privacidad</a></div>
+            </div>
         </div>
-        <div class="w3-third w3-container">
-            <h4 class="w3-text-white">Pié de página</h4>
-            <p class="w3-text-dark-grey">Texto de la sección</p>
+        <!-- Sección de contacto -->
+        <div class="w3-container w3-third">
+            <h4 class="w3-text-white">Contacto</h4>
+            <div class="w3-container w3-text-dark-grey">
+                <a href="http://afc.b-universal.com"><i class="fa fa-globe w3-xxlarge"></i></a>
+                <a href="http://www.facebook.com/angel.floreschavez">
+                    <i class="fa fa-facebook-square w3-xxlarge"></i>
+                </a>
+                <a href="http://plus.google.com/u/0/117539796577074564480">
+                    <i class="fa fa-google-plus-square w3-xxlarge"></i>
+                </a>
+                <a href="https://twitter.com/angelfloresch">
+                    <i class="fa fa-twitter-square w3-xxlarge"></i>
+                </a>
+                <a href="http://www.linkedin.com/in/angelfloreschavez">
+                    <i class="fa fa-linkedin-square w3-xxlarge"></i>
+                </a>
+                <a href="mailto:cadpps.dc@gmail.com"><i class="fa fa-envelope w3-xxlarge"></i></a>
+            </div>
         </div>
     </footer>
 
