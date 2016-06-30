@@ -38,23 +38,25 @@
     </div>
 
     <hr>
+    <h4 class="w3-content w3-text-brown"><strong>Comentarios:</strong></h4>
     {% for comment in post.comments.all %}
         {% if user.is_authenticated or comment.approved_comment %}
-            <h4 class="w3-content w3-text-brown"><strong>Comentarios:</strong></h4>
             <div class="w3-container w3-padding-medium w3-section w3-pale-blue w3-leftbar w3-border-blue">
                 <div>
                     <div class="w3-small">Comentado el <strong>{{ comment.created_date }}</strong>
                         por <strong>{{ comment.author }}</strong></div>
-                {{ comment.text|linebreaks }}
+                    <div class="w3-content w3-text-dark-grey">{{ comment.text|linebreaks }}</div>
                     {% if not comment.approved_comment %}
+                        <hr>
+                        <p class="w3-content w3-text-dark-grey"><strong>Pendiente de... </strong>
                         <a class="w3-btn w3-purple" href="{% url 'comment_remove' pk=comment.pk %}">Borrar</a>
-                        <a class="w3-btn w3-purple" href="{% url 'comment_approve' pk=comment.pk %}">Aprobar</a>
+                        <a class="w3-btn w3-purple" href="{% url 'comment_approve' pk=comment.pk %}">Aprobar</a></p>
                     {% endif %}
                 </div>
             </div>
         {% else %}
              <div class="w3-container w3-section w3-pale-red w3-leftbar w3-border-red">
-                <p>Accede al sitio para ver este comentario sin aprobar</p>
+                 <p>Accede al sitio para ver este comentario sin aprobar</p>
             </div>
         {% endif %}
     {% empty %}
